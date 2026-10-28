@@ -1,0 +1,16 @@
+## Task: Gather information
+
+Research topic: {{ ctx.topic }}
+Field: {{ ctx.field }}
+Objective: {{ ctx.objective or "(not specified)" }}
+Language: {{ ctx.language }}
+
+Identify and gather the key information available for this topic: core concepts, known results, methods and open questions.
+
+Respond with a single JSON object that has these exact fields:
+- "topic": string (the research topic)
+- "key_findings": list of strings (the main facts/ideas you gathered)
+- "sources": list of strings (sources/references you would cite)
+- "gaps_notes": string (notes on missing information)
+
+Output ONLY valid JSON (no markdown fences).

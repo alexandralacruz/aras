@@ -1,0 +1,23 @@
+[project]
+name = "aras"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "alexandralacruz",email = "alexandra.lacruz@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+]
+
+[tool.poetry]
+packages = [{include = "aras", from = "src"}]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

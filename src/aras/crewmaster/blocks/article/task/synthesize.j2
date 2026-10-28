@@ -1,0 +1,29 @@
+## Task: Synthesize the final article
+
+Research topic: {{ ctx.topic }}
+Field: {{ ctx.field }}
+Audience: {{ ctx.audience }}
+Language: {{ ctx.language }}
+Constraints: {{ ctx.constraints or "(none)" }}
+
+Gathered information (JSON):
+{{ deps.gather.model_dump_json() }}
+
+Analysis (JSON):
+{{ deps.analyze.model_dump_json() }}
+
+Review (JSON):
+{{ deps.review.model_dump_json() }}
+
+Write the final scientific article, using ONLY the information provided (do not invent references). Address the gaps flagged by the review where possible, and state limitations honestly.
+
+Respond with a single JSON object with these exact fields:
+- "title": string
+- "abstract": string (150-250 words)
+- "keywords": list of strings
+- "sections": list of objects, each with "heading" (string) and "content" (string)
+- "conclusion": string
+- "references": list of strings (only references actually used)
+- "limitations": string
+
+Output ONLY valid JSON (no markdown fences).

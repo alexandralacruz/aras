@@ -1,0 +1,17 @@
+## Task: Analyze the gathered information
+
+Research topic: {{ ctx.topic }}
+Field: {{ ctx.field }}
+
+Gathered information (JSON):
+{{ deps.gather.model_dump_json() }}
+
+Analyze the gathered information: identify the main themes, extract the key arguments and summarize the supporting evidence.
+
+Respond with a single JSON object with these exact fields:
+- "topic": string
+- "themes": list of strings
+- "key_arguments": list of strings
+- "evidence_summary": string
+
+Output ONLY valid JSON (no markdown fences).

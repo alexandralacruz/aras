@@ -1,0 +1,16 @@
+# Dependencias del sistema multiagente con CrewMaster (Módulo 6)
+
+# CrewMaster se instala sin sus dependencias opcionales pesadas
+# (deepeval, langfuse, google-api, fastapi...), que solo usa el sandbox/evaluación:
+#   pip install crewmaster==2.0.1 --no-deps
+
+# Dependencias en tiempo de ejecución del core de CrewMaster:
+langchain>=0.3,<0.4
+langchain-core>=0.3.35,<0.4
+langgraph>=0.2.71,<0.3
+jinja2>=3.1
+pyyaml>=6.0
+pydantic>=2.10
+
+# Modelo local para OllamaDriver:
+ollama

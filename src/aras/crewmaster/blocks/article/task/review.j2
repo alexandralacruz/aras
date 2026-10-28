@@ -1,0 +1,19 @@
+## Task: Review consistency and detect gaps
+
+Research topic: {{ ctx.topic }}
+
+Gathered information (JSON):
+{{ deps.gather.model_dump_json() }}
+
+Analysis (JSON):
+{{ deps.analyze.model_dump_json() }}
+
+Review the gathered information and the analysis for consistency and completeness. Detect factual gaps and contradictions.
+
+Respond with a single JSON object with these exact fields:
+- "topic": string
+- "issues": list of strings (consistency issues detected)
+- "gaps": list of strings (information gaps)
+- "verdict": string, exactly "APPROVED" if the material is enough to write the article, otherwise "REVISIONS_NEEDED"
+
+Output ONLY valid JSON (no markdown fences).

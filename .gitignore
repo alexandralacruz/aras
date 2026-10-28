@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Artefactos generados por los laboratorios (Módulos 5 y 8)
+notebooks/mcp_doc_server.py
+notebooks/aras_skill_server.py
+
+# Herramientas
+.idea/
+.vscode/
+
+docs/
+
+.mcp_test/
+
+scripts/
