@@ -7,6 +7,7 @@ ARAS recibe una **pregunta de investigación**, procesa documentos o fuentes
 disponibles, organiza la información y genera un **informe revisable**,
 distinguiendo siempre **información encontrada** de **conclusiones generadas**.
 
+![ARAS banner](assets/ARAS_AcademicResearchWorkflow.png)
 ## Arquitectura
 
 ```text
