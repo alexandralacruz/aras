@@ -83,9 +83,22 @@ Los tests verifican la **conexión con los skills académicos** (registro,
 ejecutor y servidor MCP):
 
 ```bash
-pip install pytest mcp
 python -m pytest -v
 ```
+
+> 📘 **Guía para estudiantes:** [`GUIA_PRUEBAS.md`](GUIA_PRUEBAS.md) — cómo
+> clonar el repo, instalar dependencias y ejecutar las 22 pruebas paso a paso.
+
+> **Entorno según el caso:**
+>
+> - **Tests (22):** usa el **Python base** del sistema — `python -m pytest -v`.
+>   No necesitas Ollama (usan `FakeDriver` y `dry_run`).
+> - **Demo real con LLM** (`src/aras/mcp/skill_server.py` y `notebooks/08_*`):
+>   usa el **`.venv`**, que ya incluye `mcp`, `ollama` y Jupyter Lab:
+>   `.\venv\Scripts\activate` → `.venv\Scripts\jupyter lab notebooks`.
+> - Desde el `.venv` solo verás **18 tests + 1 skip**: `pytest` ya está
+>   instalado, pero falta `crewmaster`. Para los **22 completos**, usa el
+>   Python base.
 
 - `tests/test_skills_registry.py` — descubrimiento, parseo de frontmatter y
   conexión real con `~/.pi/agent/skills`.
@@ -95,3 +108,8 @@ python -m pytest -v
   (`listar_skills`, `ejecutar_skill` y una por cada skill).
 - `tests/test_crewmaster_article.py` — equipo multiagente CrewMaster
   (orquestador + 4 agentes) con `FakeDriver`, sin Ollama.
+
+> **Nota sobre Ollama:** los tests **no requieren Ollama corriendo**: usan
+> `dry_run` o degradan con elegancia si el modelo no está disponible. Solo
+> necesitas Ollama (y el modelo descargado) para ejecutar un skill con el LLM
+> real, por ejemplo: `PYTHONPATH=src python -m aras.mcp.skill_server`.
